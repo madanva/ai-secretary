@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './components/HomePage';
+import Questions from './components/Questions';
+import Sidebar from './components/Sidebar';
+import CalendarPage from './components/CalendarPage'; 
 import './App.css';
 
-function App() {
+const AppWrapper = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+      <App />
+    </Router>
+  );
+};
+
+const App = () => {
+  // Function to handle page selection from Sidebar
+  const handleMenuSelect = (page) => {
+    // Use the `page` argument to navigate to the selected route
+    // We'll define how to do this when updating Sidebar.js
+  };
+
+  return (
+    <div className="app">
+      <Sidebar onMenuSelect={handleMenuSelect} />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/Questions" element={<Questions />} />
+        <Route path="/calendar" element={<CalendarPage />} /> {/* Route for the CalendarPage */}
+        {/* ... other routes */}
+      </Routes>
     </div>
   );
-}
+};
 
-export default App;
+export default AppWrapper;

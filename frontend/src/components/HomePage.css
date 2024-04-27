@@ -1,0 +1,79 @@
+/* HomePage.css */
+/* HomePage.css */
+.homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    flex-grow: 1; /* Takes up the rest of the space in the flex container */
+    height: 100vh;
+    background-color: #121212; /* Dark background */
+    color: white; /* Text color */
+    padding: 20px; /* Padding inside the homepage content */
+    box-sizing: border-box; /* Box model */
+    text-align: center; /* Center the text */
+    overflow-y: auto; /* Allows scrolling if content is taller than the screen */
+  }
+  
+  
+  
+  .welcome-text h1 {
+    font-size: 3rem; /* Large, readable text */
+    margin-bottom: 0.5rem;
+  }
+  
+  .welcome-text p {
+    font-size: 1.5rem;
+    color: #aaa; /* Slightly lighter text for contrast */
+    margin-bottom: 2rem;
+  }
+  
+  .get-started-button {
+    background-color: #2563eb; /* Blue button for a pop of color */
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .get-started-button:hover {
+    background-color: #1d4ed8; /* Slightly darker on hover */
+  }
+
+
+
+
+  /* HomePage.css */
+    @keyframes gradient-animation {
+        0% {
+        background-position: 0% 50%;
+        }
+        50% {
+        background-position: 100% 50%;
+        }
+        100% {
+        background-position: 0% 50%;
+        }
+    }
+  
+  .hedoria-gradient {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Make the text color transparent to reveal the gradient */
+    display: inline; /* Apply display inline to conform with the text flow */
+    animation: gradient-animation 10s ease infinite;
+  }
+  
+  /* Keep the rest of your .welcome-text h1 styles unchanged */
+  .welcome-text h1 {
+    font-size: 3rem; /* Large, readable text */
+    margin-bottom: 0.5rem;
+    /* No gradient-related styles here */
+  }
+  
+  

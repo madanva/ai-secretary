@@ -1,0 +1,34 @@
+/* Sidebar.css */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around; /* Evenly space the icons */
+  height: 100vh; /* Full height of the viewport */
+  padding: 0px; /* Add padding uniformly */
+  box-sizing: border-box; /* Include padding and border in the element's size */
+  background-color: #e8d6d6; /* Light gray background */
+  width: 100%;
+  
+}
+
+.logo {
+  width: 70px; /* Adjust size as needed */
+  height: 70px; /* Keep it circular */
+  border-radius: 50%; /* Circular shape */
+  cursor: pointer;
+  margin: 25px 0; /* Maintain consistent spacing around the logo */
+}
+
+.icon {
+  font-size: 32px;
+  cursor: pointer;
+  margin: 23px 0; /* Consistent spacing for all icons */
+}
+
+.separator {
+  height: 1px;
+  background-color: #ccc; /* Color for the separator */
+  width: 80%; /* Width of the separator */
+  margin: 40px 0; /* Increased vertical margin for the separator */
+}

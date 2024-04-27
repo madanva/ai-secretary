@@ -1,0 +1,113 @@
+.questions-page {
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;
+    color: white;
+    padding: 20px;
+}
+
+.getting-started-header {
+    position: absolute;
+    top: 60px;
+    width: 600px;
+    text-align: center;
+    z-index: 10;
+}
+
+.getting-started-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.getting-started-header p {
+    font-size: 1rem;
+    color: #aaa;
+    margin-bottom: 2rem;
+}
+
+.chat-container {
+    width: 80%;
+    max-width: 600px;
+    height: 400px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 100px;
+}
+
+.chat-messages {
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.message {
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    max-width: fit-content;
+    margin-left: auto; /* For user messages, ensure they align to the right */
+    margin-right: 20px; /* Space from the right edge of the chat container */
+    background-color: #4A90E2; /* Blue background for user messages */
+}
+
+.message.gpt {
+    align-self: flex-start;
+    background-color: #333333;
+    max-width: fit-content;
+    margin-left: 20px; /* Space from the left edge of the chat container */
+    margin-right: auto; /* For GPT messages, ensure they stay on the left */
+}
+
+.message-input-container {
+    display: flex;
+    align-items: center;
+    width: calc(100%);
+}
+
+.message-input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    margin-right: 10px;
+}
+
+.send-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.send-button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Clear browser default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+input:focus, button:focus {
+    outline: none;
+}
