@@ -5,6 +5,7 @@ import HomePage from './components/HomePage';
 import Questions from './components/Questions';
 import Sidebar from './components/Sidebar';
 import CalendarPage from './components/CalendarPage'; 
+import TalkToEliPage from './components/TalkToEliPage';
 import './App.css';
 
 const AppWrapper = () => {
@@ -28,6 +29,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Questions" element={<Questions />} />
+        <Route path="/talk-to-eli" element={<TalkToEliPage />} />
         <Route path="/calendar" element={<CalendarPage />} /> {/* Route for the CalendarPage */}
         {/* ... other routes */}
       </Routes>

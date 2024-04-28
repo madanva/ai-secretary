@@ -16,8 +16,8 @@ const Sidebar = () => {
     <div className="sidebar">
       <img src={logo} alt="Eli Logo" className="logo" onClick={() => onMenuSelect('/')} />
       <MdMessage className="icon" onClick={() => onMenuSelect('/Questions')} />
+      <MdDashboard className="icon" onClick={() => onMenuSelect('/talk-to-eli')} />
       <MdEvent className="icon" onClick={() => onMenuSelect('/calendar')} />
-
       <div className="separator"></div>
       <MdAccountCircle className="icon" onClick={() => onMenuSelect('/profile')} />
       <MdSettings className="icon" onClick={() => onMenuSelect('/settings')} />
