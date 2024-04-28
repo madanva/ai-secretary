@@ -3,7 +3,7 @@ import { MdSend } from 'react-icons/md';
 import './Questions.css';
 
 function Questions() {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([{ text: 'When do you do your best work?', sender: 'gpt' }]);
   const [input, setInput] = useState('');
   const endOfMessagesRef = useRef(null);
 
@@ -20,7 +20,7 @@ function Questions() {
 
       // Call backend to get GPT response
       try {
-        const response = await fetch('/generate', {
+        const response = await fetch('http://127.0.0.1:5000/generate', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -34,8 +34,25 @@ function Questions() {
 
         const data = await response.json();
 
+        // Remove the word "DONE" from the response and print "done" to console if it contains "DONE"
+        const processedResponse = data.response.replace('DONE', '');
+        console.log('done')
+        if (processedResponse.length !== data.response.length) {
+          const response = await fetch('http://127.0.0.1:5000/get-calender-response', {
+            method: 'POST',
+            mode: 'no-cors', // Added no-cors mode here
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({questionaire: newMessages})
+          });
+          console.log(newMessages)
+          
+          console.log(response)
+        }
+
         // Update conversation with the GPT response
-        setMessages(currentMessages => [...currentMessages, { text: data.response, sender: 'gpt' }]);
+        setMessages(currentMessages => [...currentMessages, { text: processedResponse, sender: 'gpt' }]);
       } catch (error) {
         console.error('Error:', error);
         setMessages(currentMessages => [...currentMessages, { text: "Sorry, I couldn't process that.", sender: 'gpt' }]);
