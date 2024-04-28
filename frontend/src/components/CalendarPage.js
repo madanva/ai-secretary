@@ -6,7 +6,7 @@ const CalendarPage = () => {
 
   return (
     <div className="calendar-page">
-       <h1 className="title"><span className="hedoria-gradient">Hedoria</span>'s Calendar</h1> 
+       <h1 className="title"> Your Calendar</h1> 
       <div className="google-calendar-container">
         <iframe 
           src={calendarUrl}

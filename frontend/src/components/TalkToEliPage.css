@@ -1,0 +1,242 @@
+/* TalkToHedoriaPage.css */
+.talk-to-hedoria-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full height of the viewport */
+    width: 100vw; /* Full width minus the sidebar width */
+    margin-left: var(--sidebar-width); /* Push content to the right of the sidebar */
+    color: white;
+    background-color: #121212; /* Same background as the home page */
+  }
+  
+  .title {
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+  }
+  
+  .content {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    height: 100%; /* Full height of the remaining space */
+  }
+  
+  .agent-section,
+  .checklist-section {
+    flex: 1; /* Split the space evenly */
+    margin: 0 10px; /* Space between the sections */
+    padding: 20px; /* Padding inside the sections */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+  }
+  .checklist {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Align to the top of the section */
+  }
+  .checklist li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Space between checklist items */
+    padding: 8px;
+    background-color: #2a2a2a; /* Slightly different background for contrast */
+    border-radius: 6px;
+  }
+  
+  .checklist li.checked {
+    text-decoration: line-through; /* Strikethrough text for checked items */
+    opacity: 0.7; /* Slightly fade out checked items */
+  }
+  
+  .checklist li input[type="checkbox"] {
+    margin-right: 10px; /* Space between checkbox and text */
+  }
+  
+  .checklist li label {
+    cursor: pointer;
+    color: #ffffff;
+    /* ...add more styling as needed... */
+  }
+  
+  /* Additional styling to make it look good */
+  .agent-section {
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1.33;
+    margin-left: 20px;
+    margin: 15px 10px; /* Space between the sections */
+    margin-left: 20px;
+    height: 65%;
+    width: 70%;
+    background-color: rgba(200, 200, 200, 0.1); /* Semi-transparent background */
+  }
+  
+  .checklist-section {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 20px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  .hedoria-gradient {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Make the text color transparent to reveal the gradient */
+    display: inline; /* Apply display inline to conform with the text flow */
+    animation: gradient-animation 10s ease infinite;
+  }
+  
+  .talk-to-hedoria-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 48px;
+    color: white;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .agent-section {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Add space between avatar and microphone */
+  }
+  
+  .avatar-image {
+    width: 250px; /* Increased size */
+    height: 250px;
+    border-radius: 50%;
+    background-image: url('/Users/varunmadan/Desktop/hackathon4:4:27/ai-secretary/frontend/src/eli.jpg'); /* Replace with your actual image path */
+    background-size: cover;
+    border: 3px solid white; /* Optional: add a border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add shadow for depth */
+    background-size: cover;
+    background-position: calc(40% - 10px) center;
+  }
+  
+  .microphone-icon {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 30px; /* Increase the top margin to push the microphone down */
+  }
+  .microphone-icon svg {
+    width: 32px; /* Define size for the SVG icon */
+    height: 32px;
+    fill: #666;
+    transition: fill 0.3s;
+  }
+  
+  .microphone-icon.recording svg {
+    fill: red;
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .checklist-section {
+    flex: 1;
+  }
+  .checklist-item {
+    display: flex;
+    align-items: center;
+    background: #222; /* Darker background for contrast */
+    margin-bottom: 10px; /* Reduced space between items */
+    border-radius: 5px; /* Smaller radius for a subtler effect */
+    transition: background 0.2s ease;
+    padding: 10px 20px; /* Reduced padding for tighter spacing */
+  }
+  
+  .checklist-label {
+    display: block; /* Take full width for clickable area */
+    cursor: pointer;
+    transition: color 0.2s ease;
+    color: #ddd; /* Light grey for readability */
+    font-size: 1.2em; /* Smaller font size for a more traditional look */
+  }
+  
+  .checklist-checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .checklist-custom-checkbox {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border: 2px solid #fff;
+    margin-right: 15px;
+    border-radius: 4px;
+    position: relative;
+    flex-shrink: 0;
+  }
+  
+  .checklist-custom-checkbox::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    transform: scale(0) rotate(45deg);
+    transition: transform 0.3s ease;
+  }
+  
+  .checklist-checkbox:checked + .checklist-custom-checkbox::after {
+    transform: scale(1);
+  }
+  
+  .checklist-item.checked .checklist-label {
+    color: #bbb;
+    text-decoration: line-through;
+  }
+  
+  .checklist-item:hover {
+    background: #383a42;
+  }
+  .checklist-title {
+    font-size: 2em; /* Adjusted for subtlety */
+    color: #ccc; /* Light grey for a more muted title */
+    text-align: center;
+    margin-bottom: 15px; /* Reduced space below title */
+    font-weight: 500; /* Less boldness */
+  }
+  
+  
